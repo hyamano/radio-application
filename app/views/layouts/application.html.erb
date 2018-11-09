@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RadioApplication</title>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/livestamp/1.1.0/livestamp.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js">
+      WebFontConfig = {
+        google: { families: [ 'Unica+One::latin' ] }
+      };
+      (function() {
+        var wf = document.createElement('script');
+        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+          '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+      })();
+    </script>
+  </head>
+
+  <body>
+
+    <!-- <div class="blue-grey lighten-3 wrapper"> -->
+      <nav>
+        <div class="blue-grey lighten-3 nav-wrapper">
+          <a href="/posts/" class="brand-logo">radio-application</a>
+          <% if user_signed_in? %>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <!-- <-- <li><a href="sass.html">Sass</a></li> -->
+              <li><%= current_user.nickname %></li>
+              <li><a href="/users/<%= current_user.id %>">マイページ</a></li>
+              <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+              <li><a href="/posts/new">投稿画面へ</a></li>
+            </ul>
+          <% else %>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <!-- <li><a href="sass.html">Sass</a></li> -->
+              <li><%= link_to "ログイン", new_user_session_path, class: 'post' %></li>
+              <li><%= link_to "新規登録", new_user_registration_path, class: 'post' %></li>
+            </ul>
+          <% end %>
+        </div>
+      </nav>
+
+        <%= yield %>
+
+      <footer class="blue-grey lighten-3 page-footer">
+          Copyright radio application 2017.
+      </footer>
+
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

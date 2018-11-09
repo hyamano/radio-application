@@ -1,0 +1,30 @@
+body {
+  display: block;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+footer{
+//   position: absolute;
+//   bottom: 0;
+//   width: 100%;
+  text-align: center;
+//   line-height: -1px;
+}
+
+.pagination{
+  background-color: #b0bec5;
+//   position: absolute;
+//   bottom: 45px;
+//   width: 550px;
+  margin-bottom: 3px;
+  text-align: center;
+}
+
+.btn{
+  background-color: #b0bec5;
+    }

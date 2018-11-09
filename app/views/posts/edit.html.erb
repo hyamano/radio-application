@@ -1,0 +1,10 @@
+  <div class="contents row">
+    <%= form_tag("/posts/#{@post.id}", method: :patch ) do %>
+      <h5>
+        adio-application -編集画面-
+      </h5>
+      <textarea cols="1" name="corner" placeholder="text" rows="10"><%= @post.corner %></textarea>
+      <textarea cols="30" name="text" placeholder="text" rows="10"><%= @post.text %></textarea>
+      <input type="submit" value="SENT">
+    <% end %>
+  </div>

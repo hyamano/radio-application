@@ -1,0 +1,20 @@
+<div class="col s12 m7">
+  <p><%= @nickname %>さんの投稿一覧</p>
+    <% @posts.each do |post| %>
+      <div class="card horizontal">
+        <div class="card-image">
+          <img src="">
+        </div>
+        <div class="card-stacked">
+          <div class="card-content">
+          <br>投稿時間:<span data-livestamp="<%=post.created_at%>"></span>
+            <div class="card-action">
+              <p><%= simple_format(post.text) %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <img src="background-image: url(<%= post.image %>);"> -->
+      <% end %>
+    <%= paginate(@posts) %>
+</div>
